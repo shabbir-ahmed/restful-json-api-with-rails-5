@@ -6,10 +6,13 @@ class TodosController < ApplicationController
     @todos = Todo.all
     json_response(@todos)
   end
+  
+  def new
+  end
 
   # POST /todos
   def create
-    @todo = Todo.create!(todo_params)
+    @todo = Todo.create(todo_params)
     json_response(@todo, :created)
   end
 
